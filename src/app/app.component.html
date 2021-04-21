@@ -43,3 +43,19 @@
   <div *ngSwitchCase="'list'">List View Content</div>
   <div *ngSwitchCaseDefault>Otherwise</div>
 </div>
+
+<!-- *ngFor to forOf, then *** {{}} string interpolation *** to render courses to the dom -->
+<!-- <button (click)="onAdd()">Add</button> -->
+
+<button (click)="loadCourses()">Load Courses</button>
+
+<!-- ngIf can eliminate the need for a leading asterisk to render ng-templates conditionally -->
+<ng-template [ngIf]="courses.length > 0"><br />List of Courses</ng-template>
+<ul>
+  <li *ngFor="let course of courses; trackBy: trackCourse">
+    {{ i }} - {{ course.name }}
+    <button (click)="onChange(course)">Remove</button>
+  </li>
+</ul>
+
+<ng-template [ngIf]="!(courses.length > 0)">No Courses</ng-template>
