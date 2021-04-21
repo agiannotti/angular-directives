@@ -6,6 +6,7 @@ import { NgxBootstrapIconsModule, ColorTheme } from 'ngx-bootstrap-icons';
 import { alarm, alarmFill, alignBottom } from 'ngx-bootstrap-icons';
 
 import { AppComponent } from './app.component';
+import { InputFormatDirective } from './input-format.directive';
 
 const icons = {
   alarm,
@@ -14,7 +15,7 @@ const icons = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, InputFormatDirective],
   imports: [
     BrowserModule,
     FontAwesomeModule,
