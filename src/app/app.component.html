@@ -16,14 +16,17 @@
 <!-- <div [hidden]="courses.length > 0">No courses yet</div> -->
 
 <ul class="nav nav-pills">
-  <li class="active"><a href="">Map View</a></li>
-  <li><a href="">List View</a></li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Map View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">List View</a>
+  </li>
+  <div>
+    <div>Map View Content</div>
+    <div>List View Content</div>
+  </div>
 </ul>
-<div>
-  <div>Map View Content</div>
-  <div>List View Content</div>
-  <!-- <fa-i [class]="fas fa-cloud"></fa-i> -->
-  <fa-icon [icon]="faCoffee" style="height: '5em'"></fa-icon>
-  <i-bs name="alarm-fill"></i-bs>
-</div>
-<i-bs name="fa-address-card"></i-bs>
+<!-- fa-icon && i-bs both working below -->
+<!-- <fa-icon [icon]="faCoffee" style="height: '5em'"></fa-icon> -->
+<!-- <i-bs name="alarm-fill"></i-bs> -->
