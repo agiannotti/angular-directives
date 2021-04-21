@@ -12,6 +12,7 @@ export class AppComponent {
   faAddressCard = faAddressCard;
   viewMode = 'map';
   courses;
+  canSave = true;
 
   onAdd() {
     this.courses.push({ id: 4, name: 'course4' });
@@ -46,4 +47,11 @@ export class AppComponent {
   trackCourse(index, course) {
     course ? course.id : undefined;
   }
+
+  task = {
+    title: 'Review applications',
+    assignee: {
+      name: 'John Smith',
+    },
+  };
 }

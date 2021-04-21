@@ -45,16 +45,31 @@
   <div *ngSwitchCaseDefault>Otherwise</div>
 </div>
 
-<!-- *ngFor to forOf, then *** {{}} string interpolation *** to render courses to the dom -->
-<!-- <button (click)="onAdd()">Add</button> -->
+<!-- 
+  *ngFor to forOf, then,
+  *** {{}} string interpolation ***
+  to render courses to the dom 
+-->
+
+<!--
+  <button (click)="onAdd()">Add</button>
+-->
 
 <button class="btn btn-primary" (click)="loadCourses()">Load Courses</button>
 
-<!-- ngIf can eliminate the need for a leading asterisk to render ng-templates conditionally -->
+<!--
+   ngIf can eliminate the need for a leading asterisk to render ng-templates conditionally
+-->
+
 <ng-template [ngIf]="courses.length > 0"><br />List of Courses</ng-template>
 <ul>
   <li *ngFor="let course of courses; trackBy: trackCourse">
-    {{ i }} - {{ course.name }}
+    {{ i }} - {{ course.name }} -
+
+    <!-- 
+      SAFE TRAVERSAL OPERATOR!
+     -->
+    <span>{{ task.assignee?.name }}</span>
     <button
       class="btn btn-secondary"
       style="margin: 1em; background-color: wheat; border: none"
@@ -62,7 +77,16 @@
     >
       Remove
     </button>
+
+    <button class="btn btn-secondary">Save</button>
   </li>
 </ul>
 
 <ng-template [ngIf]="!(courses.length > 0)">No Courses</ng-template>
+
+<!-- 
+  inline styling is great but it will be 
+  better for large applications and 
+  bigger runtimes to call dedicated components on use
+-->
+<button class="btn btn-secondary">Save</button>
