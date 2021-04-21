@@ -19,7 +19,7 @@
 <!-- <fa-icon [icon]="faCoffee" style="height: '5em'"></fa-icon> -->
 <!-- <i-bs name="alarm-fill"></i-bs> -->
 
-<ul class="nav nav-pills">
+<ul class="nav nav-pills card-header">
   <li class="nav-item">
     <a
       class="nav-link"
@@ -39,7 +39,7 @@
 </ul>
 
 <!-- use property binding to ngSwitch && *ngSwitchCase ** ngSwitchCaseDefault -->
-<div [ngSwitch]="viewMode">
+<div [ngSwitch]="viewMode" class="card-body">
   <div *ngSwitchCase="'map'">Map View Content</div>
   <div *ngSwitchCase="'list'">List View Content</div>
   <div *ngSwitchCaseDefault>Otherwise</div>
@@ -48,14 +48,20 @@
 <!-- *ngFor to forOf, then *** {{}} string interpolation *** to render courses to the dom -->
 <!-- <button (click)="onAdd()">Add</button> -->
 
-<button (click)="loadCourses()">Load Courses</button>
+<button class="btn btn-primary" (click)="loadCourses()">Load Courses</button>
 
 <!-- ngIf can eliminate the need for a leading asterisk to render ng-templates conditionally -->
 <ng-template [ngIf]="courses.length > 0"><br />List of Courses</ng-template>
 <ul>
   <li *ngFor="let course of courses; trackBy: trackCourse">
     {{ i }} - {{ course.name }}
-    <button (click)="onChange(course)">Remove</button>
+    <button
+      class="btn btn-secondary"
+      style="margin: 1em; background-color: wheat; border: none"
+      (click)="onChange(course)"
+    >
+      Remove
+    </button>
   </li>
 </ul>
 
