@@ -2,10 +2,10 @@
 <!-- Structural directives modify structure, prefix with *-->
 <!-- Attribute directives modify elements -->
 
-<div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
+<!-- <div *ngIf="courses.length > 0; then coursesList; else noCourses"></div> -->
 
-<ng-template #coursesList>List of courses</ng-template>
-<ng-template #noCourses>No courses yet</ng-template>
+<!-- <ng-template #coursesList>List of courses</ng-template> -->
+<!-- <ng-template #noCourses>No courses yet</ng-template> -->
 
 <!-- alternately, use property binding to bind dom object property to an expression-->
 
@@ -15,18 +15,31 @@
 <!-- <div [hidden]="courses.length === 0">List of Courses</div> -->
 <!-- <div [hidden]="courses.length > 0">No courses yet</div> -->
 
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Map View</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">List View</a>
-  </li>
-  <div>
-    <div>Map View Content</div>
-    <div>List View Content</div>
-  </div>
-</ul>
 <!-- fa-icon && i-bs both working below -->
 <!-- <fa-icon [icon]="faCoffee" style="height: '5em'"></fa-icon> -->
 <!-- <i-bs name="alarm-fill"></i-bs> -->
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [class.active]="viewMode == 'map'"
+      (click)="viewMode = 'map'"
+      >Map View</a
+    >
+  </li>
+  <li>
+    <a
+      class="nav-link"
+      [class.active]="viewMode == 'list'"
+      (click)="viewMode = 'list'"
+      >List View</a
+    >
+  </li>
+</ul>
+<!-- use property binding to ngSwitch && *ngSwitchCase ** ngSwitchCaseDefault -->
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchCaseDefault>Otherwise</div>
+</div>

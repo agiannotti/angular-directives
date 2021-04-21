@@ -11,4 +11,5 @@ export class AppComponent {
   courses = [];
   faCoffee = faCoffee;
   faAddressCard = faAddressCard;
+  viewMode = 'map';
 }
