@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard } from '@fortawesome/fontawesome-free/';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  courses = [1, 2, 3];
+  courses = [];
+  faCoffee = faCoffee;
+  faAddressCard = faAddressCard;
 }

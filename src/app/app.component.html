@@ -2,13 +2,28 @@
 <!-- Structural directives modify structure, prefix with *-->
 <!-- Attribute directives modify elements -->
 
-<!-- <div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
+<div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
 
 <ng-template #coursesList>List of courses</ng-template>
-<ng-template #noCourses>No courses yet</ng-template> -->
+<ng-template #noCourses>No courses yet</ng-template>
 
 <!-- alternately, use property binding to bind dom object property to an expression-->
+
 <!-- when using this technique, keep in mind both divs will still be in the DOM -->
 <!-- determine if building tree is costly, use ngIf to free up resources in larger trees -->
-<div [hidden]="courses.length === 0">List of Courses</div>
-<div [hidden]="courses.length > 0">No courses yet</div>
+
+<!-- <div [hidden]="courses.length === 0">List of Courses</div> -->
+<!-- <div [hidden]="courses.length > 0">No courses yet</div> -->
+
+<ul class="nav nav-pills">
+  <li class="active"><a href="">Map View</a></li>
+  <li><a href="">List View</a></li>
+</ul>
+<div>
+  <div>Map View Content</div>
+  <div>List View Content</div>
+  <!-- <fa-i [class]="fas fa-cloud"></fa-i> -->
+  <fa-icon [icon]="faCoffee" style="height: '5em'"></fa-icon>
+  <i-bs name="alarm-fill"></i-bs>
+</div>
+<i-bs name="fa-address-card"></i-bs>
